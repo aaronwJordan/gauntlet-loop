@@ -80,7 +80,19 @@ harnesses/<name>/SKILL.md       pre-bound skill for clone-as-project
 .opencode/skills/               OpenCode discovery
 .grok/skills/                   Grok discovery
 plugins/gauntlet-loop/          installable plugin
+  agents/<name>.md              Claude + Grok agent definitions
+  agents/<name>.agent.md        Copilot CLI agent definitions
+  .codex/agents/<name>.toml     Codex agent definitions
+scripts/check.py                cross-harness correctness checks
 ```
+
+Both agent flavours share `plugins/gauntlet-loop/agents/` because Copilot CLI
+discovers `*.agent.md` there. Claude Code globs `*.md`, which swallows
+`*.agent.md` too, so the two files collide on their `name:` field — and the
+Copilot flavour, whose `tools:` names Claude cannot resolve, wins and leaves
+the agent with no tools. `.claude-plugin/plugin.json` therefore lists the two
+`.md` files explicitly instead of letting Claude scan the directory. Keep that
+list in sync if you add an agent, and run `python3 scripts/check.py`.
 
 ## How it works
 
