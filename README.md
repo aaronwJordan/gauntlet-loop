@@ -21,8 +21,15 @@ This repository **is** the marketplace. Add `aaronwJordan/gauntlet-loop`, then i
 | **Claude Code** | `/plugin marketplace add aaronwJordan/gauntlet-loop` | `/plugin install gauntlet-loop@gauntlet-loop` |
 | **Codex CLI** | `codex plugin marketplace add aaronwJordan/gauntlet-loop` | `codex plugin add gauntlet-loop@gauntlet-loop` |
 | **Copilot CLI** | `copilot plugin marketplace add aaronwJordan/gauntlet-loop` | `copilot plugin install gauntlet-loop@gauntlet-loop` |
-| **Grok Build** | clone or `grok plugin install aaronwJordan/gauntlet-loop --trust` | skills under `.grok/skills/` |
+| **Grok Build** | `grok plugin marketplace add aaronwJordan/gauntlet-loop` | `grok plugin install gauntlet-loop@gauntlet-loop --trust` |
 | **OpenCode** | clone, then point `skills` at this repo's `skills/` directory | see below |
+
+Grok requires `--trust` to install, and `grok plugin marketplace update
+gauntlet-loop` before an install picks up a new release. Installing the repo
+URL directly instead of through the marketplace also works, but Grok then
+names the plugin after the URL, so its agents come out as
+`<hash>:gauntlet-builder` rather than the `gauntlet-loop:` prefix the skill's
+run files assume.
 
 Then:
 
