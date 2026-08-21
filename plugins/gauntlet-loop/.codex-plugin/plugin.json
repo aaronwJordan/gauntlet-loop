@@ -1,0 +1,25 @@
+{
+  "name": "gauntlet-loop",
+  "version": "1.0.0",
+  "description": "Gauntlet loop: write a short prompt that sets a real quality bar, then run builder/critic pairs until the work wins.",
+  "author": {
+    "name": "aaronwJordan",
+    "url": "https://github.com/aaronwJordan"
+  },
+  "homepage": "https://github.com/aaronwJordan/gauntlet-loop",
+  "repository": "https://github.com/aaronwJordan/gauntlet-loop",
+  "keywords": ["gauntlet", "loop", "quality-bar", "critic"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Gauntlet Loop",
+    "shortDescription": "Loop builder/critic pairs until the work beats a real bar",
+    "longDescription": "Writes a short prompt that sets a named, fetchable quality bar, then runs builder and critic subagents until the critic picks ours.",
+    "developerName": "aaronwJordan",
+    "category": "Productivity",
+    "capabilities": ["Write", "Instructions"],
+    "websiteURL": "https://github.com/aaronwJordan/gauntlet-loop",
+    "defaultPrompt": [
+      "Use $gauntlet-loop on this goal and run it here after I pick a bar."
+    ]
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "skills": [
+    {
+      "name": "gauntlet-loop",
+      "version": "1.0.0",
+      "files": [
+        "SKILL.md",
+        "references/loop.md",
+        "references/builder.md",
+        "references/critic.md",
+        "references/run-claude.md",
+        "references/run-grok.md",
+        "references/run-codex.md",
+        "references/run-copilot.md",
+        "references/run-opencode.md",
+        "workflows/gauntlet.rhai"
+      ]
+    }
+  ]
+}

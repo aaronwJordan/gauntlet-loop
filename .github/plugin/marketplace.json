@@ -1,0 +1,27 @@
+{
+  "name": "gauntlet-loop",
+  "owner": {
+    "name": "aaronwJordan",
+    "url": "https://github.com/aaronwJordan"
+  },
+  "metadata": {
+    "description": "Gauntlet loop: write a short prompt that sets a real quality bar, then run builder/critic pairs until the work wins.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "gauntlet-loop",
+      "description": "Copilot CLI gauntlet loop using the task tool and /fleet.",
+      "version": "1.0.0",
+      "source": "./plugins/gauntlet-loop",
+      "category": "productivity",
+      "homepage": "https://github.com/aaronwJordan/gauntlet-loop",
+      "repository": "https://github.com/aaronwJordan/gauntlet-loop",
+      "keywords": ["gauntlet", "loop", "quality-bar", "critic"],
+      "author": {
+        "name": "aaronwJordan",
+        "url": "https://github.com/aaronwJordan"
+      }
+    }
+  ]
+}

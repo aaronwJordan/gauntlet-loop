@@ -1,0 +1,13 @@
+{
+  "name": "gauntlet-loop",
+  "version": "1.0.0",
+  "description": "Gauntlet loop: write a short prompt that sets a real quality bar, then run builder/critic pairs until the work wins.",
+  "author": {
+    "name": "aaronwJordan",
+    "url": "https://github.com/aaronwJordan"
+  },
+  "homepage": "https://github.com/aaronwJordan/gauntlet-loop",
+  "repository": "https://github.com/aaronwJordan/gauntlet-loop",
+  "license": "CC-BY-4.0",
+  "keywords": ["gauntlet", "loop", "quality-bar", "critic", "ultracode"]
+}
