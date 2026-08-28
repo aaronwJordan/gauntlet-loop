@@ -9,7 +9,7 @@
     {
       "name": "gauntlet-loop",
       "description": "Write and run a gauntlet loop against a real quality bar.",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "source": "./plugins/gauntlet-loop",
       "category": "productivity",
       "homepage": "https://github.com/aaronwJordan/gauntlet-loop",

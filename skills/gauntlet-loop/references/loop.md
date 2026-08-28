@@ -9,6 +9,10 @@ The user gives a goal. You give back ONE short prompt they can paste into a fres
 3. **Write the prompt.** One block, paste-ready, no preamble, no headings inside it, no narration after it. Use the **current harness** run file for the last third (spawn, loop, tools).
 4. **Offer to run it.** One flat line under the prompt: "I can run this here." Not a question.
 
+**Stall rule.** A piece whose challenger loses twice in a row on the same named gap does not get a third identical round. It parks, and the lead escalates to the user with the critic's evidence and the builder's account of why the gap will not move. Parking is escalation, not an exit — the loop never self-certifies. This is different from a round cap: a piece that keeps improving keeps looping.
+
+**Cheapest decisive comparison first.** Open every piece at the fidelity it actually ships at — the live viewport, the play-scale pixel height, the published length. A piece that wins there is done; magnified or long-form rounds are only for pieces that fail cheap. Expensive scrutiny is a response to failure, not a default.
+
 ## The bar is the whole trick
 
 A bar has to pass three tests:
@@ -35,6 +39,10 @@ If the goal has a measurable half (load time, token cost, benchmark score, word 
 
 If a visual bar needs a browser and none is connected, say so and offer a different fetchable bar. Do not pretend a text description of a page is a screenshot.
 
+**Match the contest to the medium.** A bar in the same medium as the product (text vs text, code vs code, a shipped UI vs your UI) runs the classic contest: ours vs bar, critic picks the winner. A bar in a different medium than the product (concept art vs a 3D render, a photo vs CG, a napkin sketch vs a page) can never lose an identity contest — a render never becomes a painting. Those pieces run **champion-challenger**: the critic gets the bar plus two unlabeled versions of ours — the reigning champion and the new attempt — and picks which sits closer to the bar. Every round is winnable, and the exit is real: the piece converges when the challenger stops beating the champion and no movable gap remains.
+
+**A split piece may name its own referent.** When the work is decomposed, the lead assigns each piece the referent that actually shows it — a piece judged against a bar that cannot see it converges on nothing.
+
 ## Length and voice
 
 Short. Around 120 to 180 words. If the prompt needs a heading to stay readable, it is too long.
@@ -56,3 +64,5 @@ Plain sentences. No bullet lists inside the prompt.
 - **Named exit after N rounds.** The exit is winning, or the user stopping.
 - **Mixing harness primitives.** `/loop` and `ultracode` are Claude Code only. Do not put them in a Grok, Codex, Copilot, or OpenCode prompt.
 - **Over-specifying.**
+- **A cross-medium identity contest.** Looping until a render is mistaken for a painting burns tokens forever. Champion-challenger, not is-it-the-painting.
+- **A third round on an unmoved gap.** That is the stall rule's job.

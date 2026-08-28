@@ -14,7 +14,7 @@ This harness has `spawn_subagent` and a `gauntlet` workflow. It does **not** hav
 ## Prompt last third
 
 ```
-Keep looping until the critic picks ours blind. Do not stop before that. Do not name a round count.
+Keep looping until the critic picks ours blind — or, for a bar in a different medium than the product, until a challenger version stops beating the champion and no movable gap remains. Park any piece that loses twice on the same gap and report it. Do not stop before that. Do not name a round count.
 
 Keep a live progress file updating as the work evolves so I can watch it.
 
