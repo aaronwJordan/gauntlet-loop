@@ -13,7 +13,7 @@ This harness has `task`, `todowrite`, `question`, `skill`, `bash`, `read`, `writ
 ## Prompt last third
 
 ```
-Keep looping until the critic picks ours blind. Do not stop before that. Do not name a round count.
+Keep looping until the critic picks ours blind — or, for a bar in a different medium than the product, until a challenger version stops beating the champion and no movable gap remains. Park any piece that loses twice on the same gap and report it. Do not stop before that. Do not name a round count.
 
 Keep a live progress file updating as the work evolves so I can watch it.
 

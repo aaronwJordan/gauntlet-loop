@@ -2,8 +2,10 @@
 name: gauntlet-loop
 description: >
   Turns any goal into one short, paste-ready gauntlet-loop prompt for Claude
-  Code, then can run it with /loop, ultracode, and the Agent tool. Builder and
-  critic are separate subagents. Loop until the critic picks ours blind.
+  Code, then can run it with /loop and the Agent tool (ultracode when the budget
+  allows). Builder and critic are separate subagents. Loop until the critic
+  picks ours blind; cross-medium bars run champion-challenger until no
+  movable gap remains.
   Triggers on "/gauntlet-loop", "gauntlet loop", "gauntlet this".
 compatibility: claude-code
 license: CC-BY-4.0
@@ -12,7 +14,7 @@ argument-hint: "<goal>"
 
 # Gauntlet Loop (Claude Code)
 
-You are on **Claude Code**. `/loop` and `/effort ultracode` are native here. Use them in the written prompt and when you run it.
+You are on **Claude Code**. `/loop` is native here — use it in every written prompt. `/effort ultracode` is a budget decision, not a default (see `references/run-claude.md`).
 
 Do not mention Grok `spawn_subagent`, Codex `spawn_agent`, Copilot `/fleet`, or OpenCode `task`.
 
@@ -29,16 +31,16 @@ You are the lead. Break this into the smallest pieces that can be improved and j
 
 The critic inspects the actual output, puts it next to the bar with the labels stripped, says which one is better, and names the single biggest remaining gap. Then you send only that gap back to the builder. The critic should be harsh. Praise is not useful. A score is not useful. If ours does not win, keep going.
 
-/loop on each piece until the critic picks ours blind. Do not stop before that.
+/loop on each piece until the critic picks ours blind — or, for a cross-medium bar, until the challenger stops beating the champion and no movable gap remains. Park any piece that loses twice on the same gap and tell me. Do not stop before that.
 
 Keep a live progress file updating as the work evolves so I can watch it.
 
-Fan out subagents and ultracode.
+Fan out subagents — builders on a strong model, critics on a cheap one. Use ultracode only if I have approved the spend.
 ```
 
 ## Run it here
 
-Follow `references/run-claude.md`. If ultracode is off, `/effort ultracode` before the first spawn.
+Follow `references/run-claude.md`, including its effort-budget and progress-file rules.
 
 ## Example (visual)
 

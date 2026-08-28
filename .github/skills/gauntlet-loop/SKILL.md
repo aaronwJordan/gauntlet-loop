@@ -29,7 +29,7 @@ You are the lead. Break this into the smallest pieces that can be improved and j
 
 The critic inspects the actual output, puts it next to the bar with the labels stripped, says which one is better, and names the single biggest remaining gap. Then you send only that gap back to the builder. The critic should be harsh. Praise is not useful. A score is not useful. If ours does not win, keep going.
 
-Keep looping until the critic picks ours blind. Do not stop before that. Do not name a round count.
+Keep looping until the critic picks ours blind — or, for a bar in a different medium than the product, until a challenger version stops beating the champion and no movable gap remains. Park any piece that loses twice on the same gap and report it. Do not stop before that. Do not name a round count.
 
 Keep a live progress file updating as the work evolves so I can watch it.
 

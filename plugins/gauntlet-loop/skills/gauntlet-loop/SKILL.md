@@ -4,7 +4,9 @@ description: >
   Turns any goal into one short, paste-ready gauntlet-loop prompt, then can run
   it. The prompt makes the lead set a concrete fetchable quality bar, split the
   work, spawn a builder and a separate harsh critic on each piece, compare blind
-  against the real bar, and loop until the critic picks ours. Tailored per
+  against the real bar, and loop until the critic picks ours — or, when the bar
+  is a different medium than the product, until challengers stop beating the
+  champion and no movable gap remains. Tailored per
   harness: Claude Code uses /loop and ultracode; Grok uses spawn_subagent and a
   workflow; Codex uses spawn_agent; Copilot uses task and /fleet; OpenCode uses
   task. Triggers on "/gauntlet-loop", "gauntlet loop", "gauntlet this",
@@ -30,14 +32,14 @@ If they then say to run it, you become the lead and follow the matching run file
 Detect from tools **actually present**. Never invent a tool. Never mix primitives.
 
 1. `spawn_subagent` → **Grok.** Read `references/run-grok.md`. No `/loop`, no `ultracode`.
-2. `Agent` or `Task` together with `Bash` / `Read` / `Write` → **Claude Code.** Read `references/run-claude.md`. Use `/loop` and `ultracode`.
+2. `Agent` or `Task` together with `Bash` / `Read` / `Write` → **Claude Code.** Read `references/run-claude.md`. Use `/loop`; ultracode per that file's budget rule.
 3. `spawn_agent` → **Codex CLI.** Read `references/run-codex.md`. No `/loop`, no `ultracode`.
 4. `task` together with `view` / `apply_patch` → **Copilot CLI.** Read `references/run-copilot.md`. `/fleet` for disjoint pieces. No `/loop`, no `ultracode`.
 5. `task` together with `todowrite` / `question` / `skill` → **OpenCode.** Read `references/run-opencode.md`. No `/loop`, no `ultracode`.
 
 Then read `references/loop.md` (bar, flow, voice) and, when running, `references/builder.md` and `references/critic.md`.
 
-Write the prompt using **that** run file's last third. A Claude prompt that omits `/loop` and ultracode is wrong. A Grok/Codex/Copilot/OpenCode prompt that includes them is wrong.
+Write the prompt using **that** run file's last third. A Claude prompt that omits `/loop` is wrong. A Grok/Codex/Copilot/OpenCode prompt that includes `/loop` or ultracode is wrong.
 
 ## After the prompt
 
