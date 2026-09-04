@@ -60,12 +60,29 @@ Cloning this repo as the project cwd also loads `.opencode/skills` and `.opencod
 |---|---|---|---|---|---|
 | Keep going | `/loop` | lead loop or `gauntlet` workflow | lead loop | lead loop | lead loop |
 | Fan-out | `ultracode` + `Agent` | `spawn_subagent` (depth 1) | `spawn_agent` / `wait_agent` | `task` / `/fleet` | `task` |
-| Resume builder | `Agent` `agentId` / `SendMessage` | `resume_from` | `resume_agent` | resume task or new task with gap | new `task` with gap |
+| Resume builder | `Agent` `agentId` / `SendMessage` | `resume_from` | `followup_task` or legacy `send_input` | resume task or new task with gap | new `task` with gap |
 | Fresh critic | new `Agent` | new `spawn_subagent` | new `spawn_agent` | new `task` | new `task` |
 
 Shared (all harnesses): named fetchable bar, blind binary critic, no round-count exit, `gauntlet-progress.md`.
 
 `/loop` and `ultracode` appear **only** in the Claude skill and `references/run-claude.md`. Grok, Codex, Copilot, and OpenCode prompts tell the lead to keep looping with that harness's spawn tools instead.
+
+## Codex with Astra and Ultra
+
+Choose Astra and Ultra in the app or IDE model controls. On a supporting CLI:
+
+```bash
+codex -m gpt-6-astra -c 'model_reasoning_effort="ultra"'
+```
+
+The loop explicitly requests subagents. Its Codex run file binds to the exposed
+collaboration tools, starts critics without conversation history, and keeps
+model/effort settings inherited unless configured overrides need resolving.
+The shipped custom agents leave model settings unset for reuse with other models.
+
+Read the [Codex run instructions](skills/gauntlet-loop/references/run-codex.md)
+and [compatibility notes](skills/gauntlet-loop/references/codex-compatibility.md)
+for current and legacy tool differences, release evidence, and limitations.
 
 ## Layout
 
@@ -99,7 +116,7 @@ discovers `*.agent.md` there. Claude Code globs `*.md`, which swallows
 Copilot flavour, whose `tools:` names Claude cannot resolve, wins and leaves
 the agent with no tools. `.claude-plugin/plugin.json` therefore lists the two
 `.md` files explicitly instead of letting Claude scan the directory. Keep that
-list in sync if you add an agent, and run `python3 scripts/check.py`.
+list in sync if you add an agent, and run `python3 scripts/check.py` with Python 3.11 or later.
 
 ## How it works
 

@@ -27,13 +27,15 @@ You are not doing the work. You are writing the prompt that makes another sessio
 
 If they then say to run it, you become the lead and follow the matching run file.
 
+User instructions take precedence over skill guidelines. If asked to maintain or update this skill, do that work directly. If the user already supplied the bar and asked to run, proceed without asking them to authorize the same work again.
+
 ## Bind the harness first
 
 Detect from tools **actually present**. Never invent a tool. Never mix primitives.
 
 1. `spawn_subagent` → **Grok.** Read `references/run-grok.md`. No `/loop`, no `ultracode`.
 2. `Agent` or `Task` together with `Bash` / `Read` / `Write` → **Claude Code.** Read `references/run-claude.md`. Use `/loop`; ultracode per that file's budget rule.
-3. `spawn_agent` → **Codex CLI.** Read `references/run-codex.md`. No `/loop`, no `ultracode`.
+3. `spawn_agent` → **Codex desktop, CLI, or IDE.** Read `references/run-codex.md`. No `/loop`, no `ultracode`.
 4. `task` together with `view` / `apply_patch` → **Copilot CLI.** Read `references/run-copilot.md`. `/fleet` for disjoint pieces. No `/loop`, no `ultracode`.
 5. `task` together with `todowrite` / `question` / `skill` → **OpenCode.** Read `references/run-opencode.md`. No `/loop`, no `ultracode`.
 

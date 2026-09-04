@@ -225,6 +225,35 @@ for left, right in MIRRORS:
         bad("*", f"out of sync: {left} != {right}")
 
 
+# Packaged references must include every canonical reference without drift.
+reference_root = "skills/gauntlet-loop/references"
+reference_payload = f"{PLUGIN}/{reference_root}"
+canonical_refs = set(os.listdir(reference_root))
+packaged_refs = set(os.listdir(reference_payload))
+if canonical_refs != packaged_refs:
+    bad("*", "packaged reference file inventory differs from canonical references")
+for name in sorted(canonical_refs & packaged_refs):
+    if open(os.path.join(reference_root, name)).read() != open(os.path.join(reference_payload, name)).read():
+        bad("*", f"packaged reference differs: {name}")
+
+# Parse Codex TOML rather than accepting a matching name in malformed text.
+try:
+    import tomllib
+except ImportError:
+    bad("codex", "Python 3.11+ is required to validate Codex agent TOML")
+else:
+    for directory in (".codex/agents", f"{PLUGIN}/.codex/agents"):
+        for path in sorted(glob.glob(f"{directory}/*.toml")):
+            try:
+                with open(path, "rb") as source:
+                    agent = tomllib.load(source)
+                for key in ("name", "description", "developer_instructions"):
+                    if not isinstance(agent.get(key), str) or not agent[key].strip():
+                        bad("codex", f"{path}: missing nonempty {key}")
+            except Exception as exc:
+                bad("codex", f"{path}: invalid TOML: {exc}")
+
+
 print(f"{len(issues)} issue(s)")
 for harness, message in sorted(issues):
     print(f"  [{harness}] {message}")
