@@ -39,7 +39,7 @@ Detect from tools **actually present**. Never invent a tool. Never mix primitive
 4. `task` together with `view` / `apply_patch` → **Copilot CLI.** Read `references/run-copilot.md`. `/fleet` for disjoint pieces. No `/loop`, no `ultracode`.
 5. `task` together with `todowrite` / `question` / `skill` → **OpenCode.** Read `references/run-opencode.md`. No `/loop`, no `ultracode`.
 
-Then read `references/loop.md` (bar, flow, voice) and, when running, `references/builder.md` and `references/critic.md`.
+Then read `references/loop.md` (bar selection before implementation, blind evidence contract, shipped-experience checks, conditional completion, and prompt voice) and, when running, `references/builder.md` and `references/critic.md`.
 
 Write the prompt using **that** run file's last third. A Claude prompt that omits `/loop` is wrong. A Grok/Codex/Copilot/OpenCode prompt that includes `/loop` or ultracode is wrong.
 

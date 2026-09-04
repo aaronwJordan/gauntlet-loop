@@ -2,7 +2,7 @@
 name: gauntlet-loop
 description: >
   Turns any goal into one short, paste-ready gauntlet-loop prompt for Grok
-  Build, then can run it with spawn_subagent or the gauntlet workflow.
+  Build, then can run it with a lead-managed spawn_subagent loop.
   Depth-1 spawns. No /loop, no ultracode — those are Claude Code.
   Triggers on "/gauntlet-loop", "gauntlet loop", "gauntlet this".
 compatibility: grok-build
@@ -13,11 +13,13 @@ when-to-use: "/gauntlet-loop, gauntlet loop, gauntlet this, make a gauntlet prom
 
 # Gauntlet Loop (Grok Build)
 
-You are on **Grok Build**. Spawn with `spawn_subagent`. Prefer the bundled `gauntlet` workflow when running.
+You are on **Grok Build**. Spawn with `spawn_subagent`. Use the lead-managed loop in `references/run-grok.md`.
 
 **No `/loop`. No `ultracode`.** Those are Claude Code. Putting them in a Grok prompt is a dead instruction.
 
 Read `<this-skill-dir>/references/loop.md` for bar tests, flow, and voice. Read `references/run-grok.md` for spawn and workflow details.
+
+Apply the evidence and completion contract in `references/loop.md`: select references before implementation, isolate blind A/B critic packets, inspect the shipped experience, and require passing checks plus the mode-specific completion condition. Preserve these requirements in the generated prompt.
 
 ## Prompt template
 
@@ -39,7 +41,7 @@ Spawn builders and critics from this session. Fetch bars live. For anything visu
 
 ## Run it here
 
-Follow `references/run-grok.md`. Prefer `workflow` + `workflows/gauntlet.rhai`.
+Follow `references/run-grok.md`. The bundled legacy workflow does not enforce the shared contract; do not dispatch it.
 
 ## Example (visual)
 

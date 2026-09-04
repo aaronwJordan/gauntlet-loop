@@ -34,12 +34,16 @@ This workflow explicitly authorizes delegation. The lead owns all spawns; childr
 ## Prompt last third
 
 ```text
+Use the selected, fetched references and recorded checks before implementation. Give fresh critics neutral immutable A/B artifacts with identities and builder history withheld. Require direct inspection of the shipped experience, evidence-backed A/B verdicts, and passing functional checks; improvement alone is not completion.
+
 Use the session's actual Codex collaboration tools. Spawn builders and fresh-context critics; send builder follow-ups with the supported task-input tool. Keep the selected model and effort. Only the lead spawns agents.
 
 Continue until each piece wins blind, or a cross-medium challenger stops beating its champion with no movable gap. Park two consecutive losses on the same gap and report the evidence while continuing independent pieces. Keep gauntlet-progress.md current. Never count a blocked comparison as a win.
 ```
 
 ## Run it here
+
+Apply the evidence and completion contract in `loop.md` before these harness-specific steps. The lead supplies neutral immutable A/B artifacts, keeps identities private, and accepts only version-matched runtime evidence and passing checks. Follow its mode-specific completion rule for every piece and the integrated deliverable.
 
 1. Read `loop.md`, `builder.md`, and `critic.md`. Follow the user's requested scope. An explicit request to run already authorizes running; an explicit request to edit this skill authorizes editing, without first generating a goal prompt or asking for a bar.
 2. Record the goal, fetched reference, per-piece comparison mode, acceptance checks, and actual model/tool choices in `gauntlet-progress.md`. The lead alone updates it. Preserve artifact versions, agent IDs, verdict paths, consecutive same-gap losses, parked pieces, and the next action so work can resume after compaction.

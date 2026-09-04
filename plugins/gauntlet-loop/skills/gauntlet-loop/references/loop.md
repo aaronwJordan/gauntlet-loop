@@ -5,7 +5,7 @@ The user gives a goal. You give back ONE short prompt they can paste into a fres
 ## Flow
 
 1. **Read the goal.** One line restatement in your head, not on screen.
-2. **Set the bar.** If the user supplied a fetchable reference, use it. If not, offer **2 or 3 candidate bars**, one line each, and stop. Wait for their pick. Do not write the prompt yet.
+2. **Set the bar before implementation.** Inspect a user-supplied reference and use it if accessible and comparable; do not ask for the same choice again. Otherwise fetch **2 or 3 candidate bars**, state which concrete aspect each benchmarks, and wait for their pick before writing the prompt or building. If the user delegates selection, choose and record the rationale. A reference sets quality, not permission to copy its design or replace the user's concept. Read-only discovery can continue while selection is pending.
 3. **Write the prompt.** One block, paste-ready, no preamble, no headings inside it, no narration after it. Use the **current harness** run file for the last third (spawn, loop, tools).
 4. **Offer to run it.** One flat line under the prompt: "I can run this here." Not a question.
 
@@ -43,6 +43,18 @@ If a visual bar needs a browser and none is connected, say so and offer a differ
 
 **A split piece may name its own referent.** When the work is decomposed, the lead assigns each piece the referent that actually shows it — a piece judged against a bar that cannot see it converges on nothing.
 
+## Evidence and completion contract
+
+These requirements apply to every harness and comparison mode, including direct requests to run. Harness-specific tool instructions do not replace them.
+
+**Lock the comparison before building.** Record each piece's reference, fetched evidence, comparison mode, judged aspects, and functional acceptance checks. The reference must actually demonstrate those aspects. A visual reference cannot establish networking reliability or speech-recognition accuracy. Keep the agreed bar stable across rounds; do not lower it or switch modes to obtain a win. If it becomes inaccessible, repair access or report the comparison blocked. User-approved scope changes may revise the bar explicitly.
+
+**Make blind comparison operational.** The lead prepares immutable A/B snapshots with comparable presentation and keeps their identity mapping outside the critic packet. Vary A/B order between rounds. Start a fresh critic without inherited history; exclude builder explanations, previous verdicts, progress files, and mappings. Supply only the goal, constraints, mode, comparison criteria, artifacts, required check evidence, and a separate reference for champion-challenger mode. The critic directly inspects both artifacts and returns `{winner, gap, evidence}`, with winner `A` or `B`, or `null` when blocked. The lead alone maps the result back to identities. If branding or necessary access reveals an identity, disclose the limitation instead of claiming full blindness. Prompt exclusions are not filesystem isolation.
+
+**Judge the shipped experience.** Inspect the actual deliverable at its intended size and in its intended environment. For interactive products, exercise complete user flows in the runnable build, including relevant audio, input, timing, and interactions. Multiplayer claims require separate clients completing a shared session. Screenshots support visual findings; they do not prove interaction or audio works. Recorded checks must identify the candidate version, environment, exercised behavior, and observed result. Missing hardware, tools, or access leaves that check blocked, not passed. Require acceptance checks on the integrated final artifact as well as individual pieces; later changes invalidate affected evidence.
+
+**Keep convergence conditional.** In classic mode, finish a piece only after a valid win against its agreed external reference and passing required checks. In cross-medium mode, a winning challenger becomes champion; improvement alone is not completion. Finish only when a challenger stops beating the champion and a fresh critic finds no remaining movable gap against the external reference, with required checks passing. `gap: null` requires an explanation tied to inspected evidence. Two consecutive losses on the same gap park the piece for escalation; parking, blocked checks, exhausted resources, and missing evidence never count as success. Continue independent work and report unresolved pieces. Whole-task completion requires all pieces and the integrated deliverable to pass.
+
 ## Length and voice
 
 Short. Around 120 to 180 words. If the prompt needs a heading to stay readable, it is too long.
@@ -54,6 +66,7 @@ Plain sentences. No bullet lists inside the prompt.
 - Bake the bar in as a concrete, fetchable thing. URL, product name, repo, title.
 - Add a budget or cost ceiling line **only if the user named one**. No default cap. A harness agent-budget is a stop, not "good enough after N rounds".
 - Add tool names only if the goal needs them, and only tools this harness actually has.
+- Preserve the evidence and completion contract in generated prompts: selected references before implementation, fresh blind A/B critics, direct inspection of the shipped experience, and checks plus the mode-specific exit. If the installed skill is available to the destination session, explicitly direct it to read the shared loop and matching run file; otherwise include these requirements in the prompt itself.
 - Everything else stays out. No architecture, no file layout, no decomposition, no round count, no stack choice unless the user demanded it.
 
 ## What breaks a gauntlet loop

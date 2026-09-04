@@ -15,6 +15,8 @@ Read `references/loop.md` for the bar, flow, and voice, and `references/run-code
 
 An explicit request to run authorizes the builder/critic workflow. An explicit request to maintain this skill authorizes editing it directly. User instructions take precedence over skill guidelines.
 
+Apply the evidence and completion contract in `references/loop.md`: select references before implementation, isolate blind A/B critic packets, inspect the shipped experience, and require passing checks plus the mode-specific completion condition. Preserve these requirements in the generated prompt.
+
 ## Prompt template
 
 Replace the placeholders with the user's concrete goal, fetchable bar, and relevant checks. Omit the checks clause if there is no measurable requirement. Keep the generated prompt near 180 words and use only tool names verified in this session.

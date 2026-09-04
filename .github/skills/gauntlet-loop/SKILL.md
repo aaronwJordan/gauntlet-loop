@@ -18,6 +18,8 @@ You are on **GitHub Copilot CLI**. Spawn with `task`. Independent file-disjoint 
 
 Read `<this-skill-dir>/references/loop.md` for bar tests, flow, and voice. Read `references/run-copilot.md` for spawn details.
 
+Apply the evidence and completion contract in `references/loop.md`: select references before implementation, isolate blind A/B critic packets, inspect the shipped experience, and require passing checks plus the mode-specific completion condition. Preserve these requirements in the generated prompt.
+
 ## Prompt template
 
 ```

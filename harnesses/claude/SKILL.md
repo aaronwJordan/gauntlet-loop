@@ -20,6 +20,8 @@ Do not mention Grok `spawn_subagent`, Codex `spawn_agent`, Copilot `/fleet`, or 
 
 Read `<this-skill-dir>/references/loop.md` for bar tests, flow, and voice. Read `references/run-claude.md` for spawn details. Prepend `references/builder.md` and `references/critic.md` when spawning.
 
+Apply the evidence and completion contract in `references/loop.md`: select references before implementation, isolate blind A/B critic packets, inspect the shipped experience, and require passing checks plus the mode-specific completion condition. Preserve these requirements in the generated prompt.
+
 ## Prompt template
 
 ```
